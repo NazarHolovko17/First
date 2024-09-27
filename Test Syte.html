@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибір</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            position: relative;
+            text-align: center;
+            border: 2px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: #f44336;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 50%;
+            line-height: 20px;
+            font-size: 14px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #response {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-top: 20px;
+        }
+        .link {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        a {
+            text-decoration: none;
+            color: #2196f3;
+        }
+        a:hover {
+            color: #0b7dda;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="close-btn" onclick="showScaredMessage()">✕</div>
+        <h1>на кону твое очко</h1>
+        <div class="buttons">
+            <button onclick="showMessage(true)">Да</button>
+            <button onclick="showMessage(false)">нет</button>
+        </div>
+        <p id="response"></p>
+        <div class="link">
+            <a href="https://username.github.io/my-site/" target="_blank">Перейти на опублікований сайт</a>
+        </div>
+    </div>
+
+    <script>
+        function showMessage(choice) {
+            const response = document.getElementById('response');
+            if (choice) {
+                response.textContent = 'Пизда';
+            } else {
+                response.textContent = 'Пидора ответ';
+            }
+        }
+
+        function showScaredMessage() {
+            const response = document.getElementById('response');
+            response.textContent = 'Ссыкло';
+        }
+    </script>
+</body>
+</html>
